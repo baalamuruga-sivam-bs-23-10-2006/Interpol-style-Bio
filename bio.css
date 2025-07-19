@@ -1,0 +1,166 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background: transparent;
+  overflow: hidden;
+  color: #00ffcc;
+}
+
+.bio-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  animation: fadeIn 1s ease-out forwards;
+  overflow:scroll;
+}
+
+.bio-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.bio-left {
+  flex: 1;
+  display: flex;
+  justify-content: row;
+  align-items: flex-start;
+}
+
+.bio-img {
+  width: 300px;
+  height: auto;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 30px #00ffcc88;
+  border-radius: 10px;
+}
+
+.bio-right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bio-section {
+  opacity: 0;
+  transform: translate(-30px, -30px);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-left: 2px solid #00ffcc;
+  border-bottom: 2px solid #00ffcc;
+  border-radius: 6px;
+}
+
+.bio-section h2 {
+  margin-top: 0;
+  font-size: 18px;
+  text-shadow: 0 0 5px #00ffcc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 4px 10px;
+  border-bottom: 1px solid #00ffcc33;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li a {
+  font-size: 20px;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+  transition: transform 0.3s ease;
+}
+
+.social-icons li a:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments for mobile (portrait and landscape) */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .bio-left {
+    justify-content: center;
+  }
+
+  .bio-img {
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .bio-right {
+    width: 100%;
+    flex: none;
+  }
+
+  .bio-section {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .bio-section h2 {
+    font-size: 16px;
+  }
+
+  table td {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .social-icons li a {
+    font-size: 18px;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .bio-overlay {
+    padding: 10px;
+  }
+}
